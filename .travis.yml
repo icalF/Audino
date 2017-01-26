@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - stable
+script: bash ./build.sh
+env:
+  global:
+    - COMMIT_AUTHOR_EMAIL: laser.survivor@gmail.com
+    - secure: >-
+        tHmEPGJ9e9YOpLQCH9odLb9epBsVar/WzGuL+km9bD1O7YYswLWEPdJEM/OUnqb1FGX1q86wBzG1ND3W2fjT2e+DVYYVWVYmygYUoq+jg1ZpaUs4MEuxLcSNisGGBwjWyVI/GSNjBSQB/H/ZmBdiKPc1KQwKrDRepTpLKSAIhntCCR5TobWpbeOucrnixOGdVFlxgAaYaLn8T3qFJVgMtmTG1BvBoASDdlvNWeQL0Mrmddu1So5uPNkVinPmuCNpcLbGxoJYHNKnNIsjsjoNeRa97jdTDv7/pZTk77sKlAeCZy/+wn/tdQTobDXy/ZGrDUxJZlrLB08wbTZuS32KkalsgfGmGcpk3E+/r+EFGLGnJydHBUTbzdJdtzC2KCT1tUGhUCoobVLyWBBh8ZkZB7IDGgSWNxhFoKGrnOguvfsoQf4ez8yw8HYLpUwx4Krpfsk2RJg8K4sg1M2J4764zok08pahKkIu/HErjRBY8Mj2qP2mY1oD5mgTDgZsjdjlfgukYHXcR+Q/PDA+uB4K3I0cZz0/Fz6KDf3455crwJqPEsSR2HLrKzmQhd7coxfWpos9/kzsIeRMJrVUHOLKFQrOgDVbxmmaAv5iubYVbRGAqkyajtdbRhMYzGcEkzwMHeOnh3Qh2VaCE2d+kA3/Qcm1N7nwSEzPZxzfA2ueW+w=
+    - GH_REPO: icalF/html5-visualizer

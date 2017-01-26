@@ -6,7 +6,7 @@ $(document).ready(function () {
     visualizer.createBars();
     visualizer.setupAudioProcessing();
     // visualizer.getAudio();
-    visualizer.handleDrop();  
+    visualizer.handleDrop();
 });
 
 function AudioVisualizer() {
@@ -106,7 +106,7 @@ AudioVisualizer.prototype.createBars = function () {
 AudioVisualizer.prototype.handleDrop = function () {
     //drag Enter
     document.body.addEventListener("dragenter", function () {
-       
+
     }, false);
 
     //drag over
@@ -118,9 +118,9 @@ AudioVisualizer.prototype.handleDrop = function () {
 
     //drag leave
     document.body.addEventListener("dragleave", function () {
-       
+
     }, false);
-    
+
     //drop
     document.body.addEventListener("drop", function (e) {
         e.stopPropagation();
@@ -205,6 +205,7 @@ AudioVisualizer.prototype.start = function (buffer) {
     var that = this;
 
     function decodeAudioDataSuccess(decodedBuffer) {
+        that.setupAudioProcessing();
         that.sourceBuffer.buffer = decodedBuffer
         that.sourceBuffer.start(0);
     }
