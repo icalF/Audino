@@ -17,7 +17,7 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]
 fi
 
 # Save some useful information
-REPO="https://${GH_TOKEN}@$github.com/${GH_REPO}.git"
+REPO="https://${GH_TOKEN}@github.com/${GH_REPO}.git"
 SHA=`git rev-parse --verify HEAD`
 
 # Clone the existing gh-pages for this repo into out/
@@ -28,7 +28,7 @@ git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
 # Clean out existing contents
-rm -rf out/**/* || exit 0
+# rm -rf out/**/* || exit 0
 
 # Run our compile script
 doCompile
@@ -46,10 +46,10 @@ fi
 
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
-git add -A .
+git add -A
 git commit -m "Deploy to GitHub Pages: ${SHA}"
 
 # Now that we're all set up, we can push.
-git push $REPO $TARGET_BRANCH
+git push --force --quiet origin $TARGET_BRANCH > /dev/null 2>&1
 
 echo "Github Pages updated."

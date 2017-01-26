@@ -215,6 +215,11 @@ AudioVisualizer.prototype.start = function (buffer) {
     }
 };
 
+//stop playing
+AudioVisualizer.prototype.stop = function () {
+    this.sourceBuffer.stop();
+};
+
 //util method to get random colors to make stuff interesting
 AudioVisualizer.prototype.getRandomColor = function () {
     var letters = '0123456789ABCDEF'.split('');
